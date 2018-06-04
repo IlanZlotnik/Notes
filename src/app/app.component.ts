@@ -24,11 +24,4 @@ export class AppComponent {
     this.noteList.splice(i, 1);
   }
 
-  editNote(i: number){
-    let content = this.noteList[i].content;
-    let result = prompt("Edit Note", content);
-    if (result !== null && result !== ""){
-      this.noteList[i].content = result;
-    }
-  }
 }

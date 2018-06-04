@@ -1,5 +1,5 @@
-
-<h1 align="center">Notes</h1>
+<h1 align="center">
+  Notes</h1>
 <div style="margin:50px;">
   <div class="container">
     <div style="margin-bottom:50px;">
@@ -14,21 +14,21 @@
       <div class="col-xs-12">
         <table class="table table">
           <thead>
-            <tr>
-              <th>Content</th>
-              <th>Create Date</th>
-            </tr>
+            <div style="width:1000px;">
+              <tr>
+                <th>Content</th>
+                <th>Create Date</th>
+                <th class="btn-th"></th>
+                <th class="btn-th"></th>
+              </tr>
+            </div>
           </thead>
           <tbody>
             <tr *ngFor="let note of noteList; let i = index">
-              <td> {{note.content}}</td>
-              <td> {{note.createDate}}</td>
-              <td>
-                <button class="btn btn-info btn-md" (click)="editNote(i)"> Edit </button>
-              </td>
-              <td>
-                <button class="btn btn-danger btn-md" (click)="deleteNote(i)"> Delete </button>
-              </td>
+              <div style="width:1000px;">
+                <app-note [note]='note' (onDelete)="deleteNote(i)"></app-note>
+              </div>
+
             </tr>
           </tbody>
         </table>
